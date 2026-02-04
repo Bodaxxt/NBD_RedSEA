@@ -31,6 +31,12 @@ class FMSNavDataManager:
         # إنشاء واجهة المستخدم
         self.app = MainApplication(self.root, self.db, self.notifier, self.scheduler)
         
+        # إضافة حقل لتحديد التاريخ أو الوقت
+        self.date_entry = ttk.Entry(self.root)
+        self.date_entry.pack(pady=10)
+        self.date_entry_label = ttk.Label(self.root, text="أدخل التاريخ أو الوقت:")
+        self.date_entry_label.pack(pady=5)
+        
         # بدء المراقبة التلقائية
         self.start_monitoring()
         
@@ -85,4 +91,3 @@ class FMSNavDataManager:
 if __name__ == "__main__":
     app = FMSNavDataManager()
     app.run()
-    
